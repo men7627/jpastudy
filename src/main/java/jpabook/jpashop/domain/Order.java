@@ -18,6 +18,10 @@ public class Order {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
+    @OneToOne
+    @JoinColum n(name = "DELIVERY_ID")
+    private Delivery delivery;
+
     private LocalDateTime orderDate;
 
     @OneToMany(mappedBy = "order")
