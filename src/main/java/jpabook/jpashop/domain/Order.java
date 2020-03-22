@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseEntity {
 
     @Id
     @GeneratedValue
@@ -19,7 +19,7 @@ public class Order {
     private Member member;
 
     @OneToOne
-    @JoinColum n(name = "DELIVERY_ID")
+    @JoinColumn(name = "DELIVERY_ID")
     private Delivery delivery;
 
     private LocalDateTime orderDate;
@@ -59,6 +59,7 @@ public class Order {
     public void setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
     }
+
     public OrderStatus getStatus() {
         return status;
     }
